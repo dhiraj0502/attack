@@ -18,12 +18,12 @@ async function hackSignalR() {
     await connection.start();
     console.log("Connected to SignalR server");
 
-//    await connection.invoke("JoinSpecificChatRoom", {
-  //    userName: "dhiraj0502",
-    //  chatRoom: "epl",
-      //publicKey:
-        //"-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqBVAC35Yj5JDzrgS2fMDZ79u8XT21yCpf/mTvKciKBEgg4hGUrQmsAs35IvOoRq8v0Ks5B6q+/x0st+zdRSBCMq7w4jcCmiGUFd1kiMIBKC9TR+VqjXbswHbNB3uoROev1JF0fmgTpqz/4gqlS6lBT++WHK8Z77RriRLRlYcR9AW2Q6YwNAgD8bMO1opDOEsQKA+HGGY8yWn41Z+RNfjUSWrMC1vbiTXKEkD0LO5ZNyU9SU8fcSjd700Uq8ksMys2easxbOODD5vlMfU1Cac/m7UrIwJvzPjuG4NvtrELTC5O+ZFUoWlj4uRxVcc8XRz9B7HAdxnJOYhMLIJ8hG1sQIDAQAB-----END PUBLIC KEY-----"
-  //  });
+    await connection.invoke("JoinSpecificChatRoom", {
+      userName: "dhiraj0502",
+      chatRoom: "epl",
+      publicKey:
+        "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqBVAC35Yj5JDzrgS2fMDZ79u8XT21yCpf/mTvKciKBEgg4hGUrQmsAs35IvOoRq8v0Ks5B6q+/x0st+zdRSBCMq7w4jcCmiGUFd1kiMIBKC9TR+VqjXbswHbNB3uoROev1JF0fmgTpqz/4gqlS6lBT++WHK8Z77RriRLRlYcR9AW2Q6YwNAgD8bMO1opDOEsQKA+HGGY8yWn41Z+RNfjUSWrMC1vbiTXKEkD0LO5ZNyU9SU8fcSjd700Uq8ksMys2easxbOODD5vlMfU1Cac/m7UrIwJvzPjuG4NvtrELTC5O+ZFUoWlj4uRxVcc8XRz9B7HAdxnJOYhMLIJ8hG1sQIDAQAB-----END PUBLIC KEY-----"
+    });
 
     console.log("Joined chat room: epl");
 
