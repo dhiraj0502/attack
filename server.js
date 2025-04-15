@@ -32,7 +32,7 @@ async function hackSignalR() {
       chatRoom: "epl"
     }, "Hello World from Node client");
 
- //   console.log("Message sent!");
+    console.log("Message sent!");
 
   } catch (err) {
     console.error("Error:", err);
