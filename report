@@ -1,0 +1,29 @@
+1. Introduction
+This report summarizes the findings from the security assessment of the Chat & File Sharing Application. The goal of the assessment was to identify vulnerabilities and propose remediation strategies to improve the application's security posture.
+2. Key Findings
+The security testing of the application uncovered several critical and moderate vulnerabilities, including:
+- Weak session management
+- Insecure WebSocket (SignalR) implementation
+- Application freezes during large file transfers due to slicing files in 16KB chunks
+- SignalR vulnerabilities including acceptance of connections from custom Node.js clients
+- Lack of session validation for SignalR connections
+- Ability for attackers to join chats and invoke methods without restriction
+- Chat messages not being persisted to the database
+- RSA encryption size limitations
+3. SignalR Vulnerabilities
+The application uses SignalR for real-time messaging, which was found to have the following vulnerabilities:
+- Connections from unauthorized Node.js clients are accepted
+- Authentication is limited to token validation, with no session binding
+- Attackers can join chat rooms and invoke backend methods directly
+- Chat messages are not stored in the database, impacting auditability and reliability
+- RSA encryption used has size limitations which could weaken security
+4. Recommendations
+The following recommendations are proposed to address the identified vulnerabilities:
+- Bind session to a device fingerprint or IP address and validate it on the backend
+- Require GitHub reauthentication before allowing access to chat or file sharing features
+- Implement rate limiting middleware to prevent abuse of APIs
+- Enhance logging and monitoring for all SignalR communications
+- Save all chat data to the database for persistence and auditing purposes
+- Upgrade RSA key sizes and review cryptographic best practices
+5. Conclusion
+The assessment highlights multiple areas where the security of the Chat & File Sharing Application can be significantly improved. By implementing the proposed recommendations, the overall integrity, confidentiality, and availability of the application can be strengthened.
